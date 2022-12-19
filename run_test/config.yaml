@@ -1,0 +1,45 @@
+ABCI:
+  group: '[group]'
+  job_execution_options: ''
+  job_script_preamble: ./job_script_preamble.sh
+generic:
+  batch_job_timeout: 600
+  function: main
+  job_command: python example.py
+  params_path: /mnt/c/Users/n.aoi/Desktop/analysis/or/hpo/pre/dist/submit/model
+  python_file: ./example.py
+  workspace: ./work
+optimize:
+  goal: minimize
+  parameters:
+  - initial: 0.0
+    lower: -5.0
+    name: x1
+    type: uniform_float
+    upper: 5.0
+  - initial: 0.0
+    lower: -5.0
+    name: x2
+    type: uniform_float
+    upper: 5.0
+  - initial: 0.0
+    lower: -5.0
+    name: x3
+    type: uniform_float
+    upper: 5.0
+  - initial: 0.0
+    lower: -5.0
+    name: x4
+    type: uniform_float
+    upper: 5.0
+  - initial: 0.0
+    lower: -5.0
+    name: x5
+    type: uniform_float
+    upper: 5.0
+  rand_seed: 42
+  search_algorithm: optimizer.MyOptimizer
+  trial_number: 2
+resource:
+  num_node: 4
+  type: local
